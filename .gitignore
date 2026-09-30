@@ -12,3 +12,4 @@ venv/
 /evaluation/results/events.jsonl
 .DS_Store
 *.tsbuildinfo
+deliverables/*.mp4
