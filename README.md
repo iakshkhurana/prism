@@ -8,6 +8,10 @@
 
 Built for Samsung PRISM Gen AI Hackathon 3.0, Theme 4, and positioned as **Live Agent Assist**: the control-room-style console shows the agent a calm, cited answer and shows the judge the engine deciding, on one screen.
 
+## Demo video
+
+[Watch the 5-minute demo](https://youtu.be/jLJLWHfmwJc)
+
 ## Why it's different
 
 Answer quality is not the hard part of live assist; *timing* and *trust* are. Prelude treats both as measured properties, not promises. A **rule-based controller** (no LLM in the loop, ~25 ms) reads entity anchors, embedding drift, clause boundaries and content tokens per chunk and fires early; the gap between where it fired and the offline-labelled safe point is scored as **headroom**. A **multi-intent decomposer** splits one utterance into up to four sub-queries. **Hybrid retrieval** (BM25 + dense, reciprocal-rank fusion, cross-encoder rerank) returns hits that carry their own provenance. **Claim-based synthesis** emits claims with citations and verbatim quotes, never prose. A **subtractive verifier** — id allow-list → verbatim quote match → NLI entailment — can reject a claim but never edit, invent or promote one. A **session claim graph** versions every claim so a late detail updates only the affected ones, and *"say that again, shorter"* re-renders with zero retrievals.
